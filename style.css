@@ -1,12 +1,36 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: 'Fredoka';
+  src: local('Fredoka One');
+  src: url('./font/Fredoka One.eot');
+  src:
+    url('./font/Fredoka One.eot?#font-spider') format('embedded-opentype'),
+    url('./font/Fredoka One.woff') format('woff'),
+    url('./font/Fredoka One.ttf') format('truetype'),
+    url('./font/Fredoka One.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: Helvetica, 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
+  font-family: 'Open Sans', 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+.logo {
+  float: left;
+  font-family: 'Fredoka';
+  color: #9a9da2;
+  font-size: 30px;
+  line-height: 50px;
+}
+.logo > span {
+  color: #e8676b;
+  margin-right: 3px;
 }
 .clearfix::before, .clearfix::after {
   content: " ";
@@ -25,11 +49,15 @@ a {
   margin: auto;
   padding: 10px 15px;
 }
+.topNavBar > nav {
+  float: right;
+}
 .topNavBar > nav > ul {
   margin: 0;
   padding: 0;
   text-align: right;
   list-style: none;
+  height: 100%;
 }
 .topNavBar > nav > ul > li {
   display: inline-block;
@@ -37,6 +65,11 @@ a {
   color: rgba(255, 255, 255, .7);
   font-size: 13px;
   font-weight: 700;
+}
+.topNavBar > nav > ul > li > a {
+  display: block;
+  line-height: 1;
+  padding: 12px 0;
 }
 .banner {
   position: relative;
