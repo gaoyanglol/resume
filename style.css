@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  font-family: Helvetica, 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
 }
 a {
   text-decoration: none;
@@ -32,6 +33,7 @@ a {
 }
 .topNavBar > nav > ul > li {
   display: inline-block;
+  margin-left: 30px;
   color: rgba(255, 255, 255, .7);
   font-size: 13px;
   font-weight: 700;
