@@ -12,37 +12,14 @@
   font-weight: 400;
   font-style: normal;
 }
-@font-face {
-  font-family: 'Open Sans Bold';
-  src: local('Open Sans');
-  src: url('./font/OpenSans-Bold.eot');
-  src: 
-    url('./font/OpenSans-Bold.eot?#font-spider') format('embedded-opentype'),
-    url('./font/OpenSans-Bold.woff') format('woff'),
-    url('./font/OpenSans-Bold.ttf') format('truetype'),
-    url('./font/OpenSans-Bold.svg') format('svg');
-    font-weight: 700;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans');
-  src: url('./font/OpenSans-Regular.eot');
-  src: 
-    url('./font/OpenSans-Regular.eot?#font-spider') format('embedded-opentype'),
-    url('./font/OpenSans-Regular.woff') format('woff'),
-    url('./font/OpenSans-Regular.ttf') format('truetype'),
-    url('./font/OpenSans-Regular.svg') format('svg');
-}
 body {
   margin: 0;
-  font-family: 'Open Sans', 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
+  font-family: 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
+  background: #efefef;
 }
 a {
   text-decoration: none;
   color: inherit;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans Bold";
 }
 .logo {
   float: left;
@@ -86,8 +63,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   margin-left: 30px;
   color: rgba(255, 255, 255, .7);
-  font-family: "Open Sans Bold";
   font-size: 13px;
+  font-weight: bold;
 }
 .topNavBar > nav > ul > li::after {
   content: " ";
@@ -119,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   left:0;
   right: 0;
   height: 515px;
-  background: url(./image/banner_bg.jpg) no-repeat center;
+  background: url(./image/banner_bg.jpg) no-repeat center / cover;
 }
 .banner::before {
   content: "";
@@ -136,7 +113,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card {
   width: 930px;
-  height: 528px;
   background: #fff;
   box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
   -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
@@ -144,6 +120,107 @@ h1, h2, h3, h4, h5, h6 {
 .profile {
   padding: 57px 50px 15px;
 }
-.info > h1 {
+.profile hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid #dedede;
+}
+.photo {
+  float: left;
+  margin-right: 60px;
+}
+.info > h1,
+.info > h2 {
   color: #3d4451
+}
+.info > h1 {
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 900;
+  margin: 0 0 5px;
+}
+.info > h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+.info {
+  overflow: hidden;
+}
+.preword {
+  margin-bottom: 18px;
+}
+.welcome {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 12px;
+  margin-bottom: 10px;
+  background: #e8676b;
+  position: relative;
+}
+.welcome:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 8px 8px;
+  border-color: transparent;
+  border-left-color: #e8676b;
+}
+.info dt,
+.info dd {
+  float: left;
+  padding: 5px 0;
+}
+.info dt {
+  width: 30%;
+  color: #333;
+  font-weight: bold;
+}
+.info dd {
+  width: 70%;
+  color: #9da0a7;
+  margin: 0;
+}
+
+.media {
+  padding: 15px 0;
+  background: #e8676b;
+}
+.media > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.media > ul > li {
+  display: inline-block;
+  margin: 5px 15px;
+}
+.media > ul > li > a {
+  display: block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transition: .25s all ease;
+  -moz-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+.media > ul > li > a:hover {
+  background: rgba(0, 0, 0, .1)
+}
+.media svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  vertical-align: middle;
 }

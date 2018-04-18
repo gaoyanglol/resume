@@ -3,7 +3,15 @@
   <head>
     <title>My Resume</title>
     <link rel="stylesheet" href="./style.css">
-
+    <script src="https://at.alicdn.com/t/font_632998_s1vrn8cc07eyu8fr.js"></script>
+    <style type="text/css">
+      .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    </style>
   </head>
   <body>
     <div class="topNavBarWrapper">
@@ -13,32 +21,31 @@
           </a>
           <nav>
             <ul class="clearfix">
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">SKILLS</a></li>
-              <li><a href="#">EXPERIENCE</a></li>
-              <li><a href="#">PRICING</a></li>
-              <li><a href="#">BLOG</a></li>
-              <li><a href="#">CALENDAR</a></li>
-              <li><a href="#">CONTACT</a></li>
-              <li><a href="#">OTHER</a></li>
-              <li><a href="#">ALL DEMOS</a></li>
+              <li><a href="#">关于</a></li>
+              <li><a href="#">技能</a></li>
+              <li><a href="#">作品</a></li>
+              <li><a href="#">博客</a></li>
+              <li><a href="#">日历</a></li>
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#">其他</a></li>
             </ul>
           </nav>
         </div>
     </div>
-
     <div class="banner"></div>
     <main class="container">
       <div class="about">
         <div class="card">
-            <div class="profile">
+            <div class="profile clearfix">
               <div class="photo">
-                <img src="" alt="头像">
+                <img src="./image/avatar.jpg" alt="头像">
               </div>
-              <div class="info">
-                <span class="welcome">HELLO</span>
-                <h1><span>I'm</span>Gao Yang</h1>
-                <h2>Front-end development engineer</h2>
+              <div class="info clearfix">          
+                <div class="preword">
+                  <span class="welcome">HELLO</span>
+                </div>
+                <h1>方应杭</h1>
+                <h2>前端开发工程师</h2>
                 <hr>
                 <dl>
                   <dt>年龄</dt>
@@ -53,13 +60,29 @@
               </div>
             </div>
             <footer class="media">
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
-              <a href="#"><img src="#" alt="..."></a>
+              <ul>
+                <li>
+                  <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="#icon-github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="#icon-7"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </footer>            
           </div>
       </div>
