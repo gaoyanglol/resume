@@ -37,8 +37,11 @@ a {
   clear: both;
   display: table;
 }
+.header {
+  margin-bottom: 40px;
+}
 .topNavBarWrapper {
-  position: fixed;
+  position: relative;
   padding: 10px 0;
   width: 100%;
   z-index: 3;
@@ -91,7 +94,7 @@ a {
   padding: 12px 0;
 }
 .banner {
-  position: relative;
+  position: absolute;
   top:0;
   left:0;
   right: 0;
@@ -106,10 +109,15 @@ a {
   background: rgba(44, 51, 64, 0.8);
 }
 .container {
+  position: relative;
+  z-index: 3;
   width: 100%;
   max-width: 930px;
   padding: 0 15px;
   margin: auto;
+}
+.about {
+  padding-top: 40px;
 }
 .card {
   width: 930px;
@@ -154,7 +162,9 @@ a {
 .welcome {
   display: inline-block;
   color: #fff;
-  font-weight: 700;
+  line-height: 1.1;
+  font-size: 14px;
+  font-weight: bold;
   padding: 7px 12px;
   margin-bottom: 10px;
   background: #e8676b;
@@ -223,4 +233,27 @@ a {
   height: 24px;
   fill: #fff;
   vertical-align: middle;
+}
+.profileText {
+  margin-top: 30px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 20px;
+}
+.profileText p {
+  margin: 0;
+  color: #3d4451;
+}
+.profileText p:first-child {
+  margin-bottom: 25px;
+}
+.profileText p > a {
+  display: inline-block;
+  line-height: 1.1;
+  padding: 15px 55px;
+  letter-spacing: 0.05em;
+  margin: 5px;
+  border: 1px solid #cbcdcf;
+  font-size: 18px;
+  font-weight: bolder;
 }
