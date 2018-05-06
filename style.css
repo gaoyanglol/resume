@@ -116,15 +116,13 @@ a {
   padding: 0 15px;
   margin: auto;
 }
-.about {
+.section.about {
   padding-top: 40px;
 }
-.card {
-  width: 930px;
-  background: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
-  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
+.section {
+  padding-top: 70px;
 }
+
 .profile {
   padding: 57px 50px 15px;
 }
@@ -256,4 +254,21 @@ a {
   border: 1px solid #cbcdcf;
   font-size: 18px;
   font-weight: bolder;
+}
+.section-title {
+  margin: 0 0 25px 0;
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.section-box {
+  padding: 40px 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0, 0, 0, .25);
+}
+.about .section-box {
+  padding: 0;
 }
