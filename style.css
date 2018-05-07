@@ -254,6 +254,10 @@ a {
   border: 1px solid #cbcdcf;
   font-size: 18px;
   font-weight: bolder;
+  transition: all .3s ease;
+}
+.profileText p > a:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
 }
 .section-title {
   margin: 0 0 25px 0;
@@ -271,4 +275,84 @@ a {
 }
 .about .section-box {
   padding: 0;
+}
+.row {
+  margin: 0 -15px 0;
+}
+.section-box .row .col {
+  width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  float: left;
+}
+.progress-bar {
+  margin-bottom: 40px;
+}
+.bar-title {
+  display: block;
+  line-height: 1.1;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #3d4451;
+}
+.bar-line {
+  background: rgba(232, 103, 107, .2);
+  border-radius: 5px;
+}
+.bar-line span {
+  display: block;
+  border-radius: 5px;
+  height: 5px;
+  background: #e8676b;
+}
+.row:last-child .progress-bar {
+  margin-bottom: 0;
+}
+.filter {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.filter-inner {
+  display: inline-block;
+}
+.filter-btn-group button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 0 20px 0 0;
+  padding: 0 12px;
+  background: none;
+  color: #3d4451;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'PingFang SC', 'Microsoft YaHei','微软雅黑', 'SimHei', '黑体', sans-serif;
+}
+.filter-btn-group button:first-child {
+  padding-left: 0;
+}
+.filter-btn-group button:last-child {
+  padding-right: 0;
+  margin: 0;
+}
+.filter-bar {
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.filter-bar span {
+  display: block;
+  height: 5px;
+  background: #e8676b;
+  border-radius: 5px;
+}
+.pf-grid-item {
+  float: left;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.size2 {
+  width: 66.66%;
+}
+.size1 {
+  width: 33.33%;
 }
