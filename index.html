@@ -162,24 +162,41 @@
           <div class="filter">
             <div class="filter-inner">
               <div class="filter-btn-group">
-                <button>全部</button>
-                <button>框架</button>
-                <button>原生JS&CSS</button>
+                <button onclick="changeTab(1)">全部</button>
+                <button onclick="changeTab(2)">框架</button>
+                <button onclick="changeTab(3)">原生JS&CSS</button>
               </div>
               <div class="filter-bar">
-                <span style="width: 10%"></span>
+                <span id="filter-line" style="width: 30px; left: 0"></span>
               </div>
             </div>
           </div>
           <div class="pf-grid clearfix">
-            <div class="pf-grid-item size2"></div>
-            <div class="pf-grid-item size1"></div>
-            <div class="pf-grid-item size1"></div>
+            <div class="pf-grid-item size2">
+              <div class="pf-item-bg" style="background: url(./image/pf_01.jpg) no-repeat"></div>
+            </div>
+            <div class="pf-grid-item size1">
+              <div class="pf-item-bg" style="background: url(./image/pf_02.jpg) no-repeat"></div>
+            </div>
+            <div class="pf-grid-item size1">
+              <div class="pf-item-bg" style="background: url(./image/pf_03.jpg) no-repeat"></div>
+            </div>
           </div>
         </div>
       </div>
 
     </main>
-
+    <script>
+      var line = document.getElementById("filter-line");
+      function changeTab(status) {
+        if (status == 1) {
+          line.style = "width: 30px; left: 0"
+        } else if (status == 2) {
+          line.style = "width: 30px; left: 75px"
+        } else if (status == 3) {
+          line.style = "width: 78px; left: 150px"
+        }
+      }
+    </script>
   </body>
 </html>
