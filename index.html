@@ -57,7 +57,7 @@
       <div class="loading"></div>
     </div>
     <div class="header">
-      <div class="topNavBarWrapper">
+      <div id="topNavBar" class="topNavBarWrapper">
         <div class="topNavBar clearfix">
             <a class="logo" href="#" alt="logo">
               <span>RS</span>card
@@ -66,8 +66,22 @@
               <ul class="clearfix">
                 <li><a href="#">关于</a></li>
                 <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
+                <li>
+                  <a class="menuTrigger" href="#"><span>作品</span></a>
+                  <ul class="submenu">
+                    <li>作品1</li>
+                    <li>作品2</li>
+                    <li>作品3</li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="menuTrigger" href="#">博客</a>
+                  <ul class="submenu">
+                    <li>博客1</li>
+                    <li>博客2</li>
+                    <li>博客3</li>
+                  </ul>
+                </li>
                 <li><a href="#">日历</a></li>
                 <li><a href="#">联系方式</a></li>
                 <li><a href="#">其他</a></li>
@@ -243,7 +257,30 @@
     <script>
       setTimeout(function(){
         loadingGif.classList.remove('active')
-      }, 3000)
+      }, 1000)
+
+      window.onscroll = function() {
+          if (window.scrollY) {
+          topNavBar.classList.add('sticky')
+        } else {
+          topNavBar.classList.remove('sticky')
+        }
+      }
+      
+      let aTags = document.getElementsByClassName('menuTrigger')
+      for (let i = 0; i < aTags.length; i++) {
+        aTags[i].onmouseenter = function(e) {
+          let a = e.currentTarget
+          let b = a.nextSibling
+          while (b.nodeType === 3) {
+            b = b.nextSibling
+          }
+          console.log(b)
+        }
+        aTags[i].onmouseleave = function() {
+          console.log('mouseleave')
+        }
+      }
     </script>
   </body>
 </html>
