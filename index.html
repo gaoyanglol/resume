@@ -64,22 +64,22 @@
             </a>
             <nav>
               <ul class="clearfix">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li>
-                  <a class="menuTrigger" href="#"><span>作品</span></a>
+                <li><a id="siteAbout" href="#">关于</a></li>
+                <li><a id="siteSkills" href="#">技能</a></li>
+                <li class="menuTrigger">
+                  <a id="sitePortfolio" href="#">作品</a>
                   <ul class="submenu">
-                    <li>作品1</li>
-                    <li>作品2</li>
-                    <li>作品3</li>
+                    <li><a href="#">作品112121</a></li>
+                    <li><a href="#">作品2121</a></li>
+                    <li><a href="#">作品312</a></li>
                   </ul>
                 </li>
-                <li>
-                  <a class="menuTrigger" href="#">博客</a>
+                <li class="menuTrigger">
+                  <a href="#">博客</a>
                   <ul class="submenu">
-                    <li>博客1</li>
-                    <li>博客2</li>
-                    <li>博客3</li>
+                    <li><a href="#">博客1</a></li>
+                    <li><a href="#">博客2</a></li>
+                    <li><a href="#">博客3</a></li>
                   </ul>
                 </li>
                 <li><a href="#">日历</a></li>
@@ -267,18 +267,17 @@
         }
       }
       
-      let aTags = document.getElementsByClassName('menuTrigger')
-      for (let i = 0; i < aTags.length; i++) {
-        aTags[i].onmouseenter = function(e) {
-          let a = e.currentTarget
-          let b = a.nextSibling
-          while (b.nodeType === 3) {
-            b = b.nextSibling
-          }
-          console.log(b)
+      let liTags = document.getElementsByClassName('menuTrigger')
+      for (let i = 0; i < liTags.length; i++) {
+        liTags[i].onmouseenter = function(e) {
+          let li = e.currentTarget
+          let b = li.getElementsByTagName('ul')[0]
+          b.classList.add('active')
         }
-        aTags[i].onmouseleave = function() {
-          console.log('mouseleave')
+        liTags[i].onmouseleave = function(e) {
+          let li = e.currentTarget
+          let b = li.getElementsByTagName('ul')[0]
+          b.classList.remove('active')
         }
       }
     </script>
