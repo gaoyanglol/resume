@@ -280,16 +280,27 @@
           b.classList.remove('active')
         }
       }
-      
+
       let aTags = document.querySelectorAll('.topNavBar nav > ul > li > a')
       for (let i = 0; i < aTags.length; i++) {
         aTags[i].onclick = function(e) {
           e.preventDefault()
-          let a = e.currentTarget
-          let href = a.getAttribute('href')
-          let section = document.querySelector(href)
-          let top = section.offsetTop
-          window.scrollTo(0, top)
+          let section = document.querySelector(e.currentTarget.getAttribute('href'))
+          
+          let currentTop = window.scrollY
+          let targetTop = section.offsetTop
+          let n = 60
+          let duration = 500 / n // 每次移动的时间
+          let distance = (targetTop - currentTop) / n  // 每次移动的距离
+          let i = 0
+          let id = setInterval(() => {
+            if (i == n) {
+              window.clearInterval(id)
+              return
+            }
+            i++
+            window.scrollTo(0, currentTop + distance * i)
+          }, duration)
         }
       }
     </script>
