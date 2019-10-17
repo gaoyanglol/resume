@@ -285,22 +285,22 @@
       for (let i = 0; i < aTags.length; i++) {
         aTags[i].onclick = function(e) {
           e.preventDefault()
-          let section = document.querySelector(e.currentTarget.getAttribute('href'))
-          
+          let targetElement = document.querySelector(e.currentTarget.getAttribute('href'))
           let currentTop = window.scrollY
-          let targetTop = section.offsetTop
+          let targetTop = targetElement.offsetTop
           let n = 60
-          let duration = 500 / n // 每次移动的时间
-          let distance = (targetTop - currentTop) / n  // 每次移动的距离
-          let i = 0
+          let t = 3000 / n
+          let s = (targetTop - currentTop) / n
+          let j = 0
           let id = setInterval(() => {
-            if (i == n) {
+            if (j === n) {
               window.clearInterval(id)
               return
             }
-            i++
-            window.scrollTo(0, currentTop + distance * i)
-          }, duration)
+            j++
+            window.scrollTo(0, currentTop + s * j)
+          }, t)
+
         }
       }
     </script>
