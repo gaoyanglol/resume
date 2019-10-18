@@ -4,6 +4,7 @@
     <title>My Resume</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://at.alicdn.com/t/font_632998_s1vrn8cc07eyu8fr.js"></script>
+    
     <style type="text/css">
       .icon {
         width: 1em; height: 1em;
@@ -242,6 +243,8 @@
       </div>
 
     </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.3.1/Tween.min.js"></script>
     <script>
       var line = document.getElementById("filter-line");
       function changeTab(status) {
@@ -282,25 +285,28 @@
       }
 
       let aTags = document.querySelectorAll('.topNavBar nav > ul > li > a')
+      
+      function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+          }
+      requestAnimationFrame(animate);
+
       for (let i = 0; i < aTags.length; i++) {
         aTags[i].onclick = function(e) {
           e.preventDefault()
           let targetElement = document.querySelector(e.currentTarget.getAttribute('href'))
           let currentTop = window.scrollY
           let targetTop = targetElement.offsetTop
-          let n = 60
-          let t = 3000 / n
-          let s = (targetTop - currentTop) / n
-          let j = 0
-          let id = setInterval(() => {
-            if (j === n) {
-              window.clearInterval(id)
-              return
-            }
-            j++
-            window.scrollTo(0, currentTop + s * j)
-          }, t)
 
+          var coords = { y: currentTop };
+          var tween = new TWEEN.Tween(coords)
+            .to({y: targetTop }, 1000)
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .onUpdate(function() {
+              window.scrollTo(0, coords.y)
+            })
+            .start();
         }
       }
     </script>
