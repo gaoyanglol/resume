@@ -4,6 +4,7 @@
     <title>My Resume</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://at.alicdn.com/t/font_632998_s1vrn8cc07eyu8fr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
     
     <style type="text/css">
       .icon {
@@ -244,7 +245,7 @@
 
     </main>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.3.1/Tween.min.js"></script>
+    
     <script>
       var line = document.getElementById("filter-line");
       function changeTab(status) {
@@ -302,7 +303,7 @@
           var coords = { y: currentTop };
           var tween = new TWEEN.Tween(coords)
             .to({y: targetTop }, 1000)
-            .easing(TWEEN.Easing.Quadratic.Out)
+            .easing(TWEEN.Easing.Cubic.InOut)
             .onUpdate(function() {
               window.scrollTo(0, coords.y)
             })
