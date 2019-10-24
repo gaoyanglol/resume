@@ -55,9 +55,6 @@
     </style>
   </head>
   <body>
-    <div id="loadingGif" class="loadingpage active">
-      <div class="loading"></div>
-    </div>
     <div class="header">
       <div id="topNavBar" class="topNavBarWrapper">
         <div class="topNavBar clearfix">
@@ -94,7 +91,7 @@
       <div class="banner"></div>
     </div>
     <main class="container">
-      <div data-x id="siteAbout" class="section about">
+      <div data-x id="siteAbout" class="section about offset">
         <div class="section-box">
           <div class="profile clearfix">
             <div class="photo">
@@ -155,7 +152,7 @@
           </p>
         </div>
       </div>
-      <div data-x id="siteSkills" class="section skills">
+      <div data-x id="siteSkills" class="section skills offset">
         <h2 class="section-title">技能</h2>
         <div class="section-box">
           <div class="row clearfix">
@@ -214,7 +211,7 @@
           </div>
         </div>
       </div>
-      <div data-x id="sitePortfolio" class="section portfolio">
+      <div data-x id="sitePortfolio" class="section portfolio offset">
         <h2 class="section-title">作品集</h2>
         <div class="section-box-transparent">
           <div class="filter">
@@ -259,17 +256,16 @@
       }
     </script>
     <script>
-      setTimeout(function(){
-        loadingGif.classList.remove('active')
-      }, 1000)
-
+      findCloset()
       window.onscroll = function() {
         if (window.scrollY) {
           topNavBar.classList.add('sticky')
         } else {
           topNavBar.classList.remove('sticky')
         }
-
+        findCloset()
+      }
+      function findCloset() {
         let specialTags = document.querySelectorAll('[data-x]')
         let minIndex = 0
         for (let i = 1; i < specialTags.length; i++) {
@@ -277,7 +273,8 @@
             minIndex = i
           }
         }
-
+        // minIndex 距离窗口顶部最近的元素
+        specialTags[minIndex].classList.remove('offset')
         let id = specialTags[minIndex].id
         let li = document.querySelector('a[href="#'+ id + '"]').parentNode
         let brothers = li.parentNode.children
@@ -286,7 +283,7 @@
         }
         li.classList.add('highlight')
       }
-      
+
       let liTags = document.querySelectorAll('.topNavBar nav > ul > li')
       for (let i = 0; i < liTags.length; i++) {
         liTags[i].onmouseenter = function(e) {

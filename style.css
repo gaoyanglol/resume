@@ -177,6 +177,13 @@ a {
   padding: 0 15px;
   margin: auto;
 }
+div[data-x].offset {
+  transform: translateY(100px);
+  opacity: 0
+}
+div[data-x] {
+  transition: all .7s ease-out;
+}
 .section.about {
   padding-top: 40px;
 }
@@ -365,6 +372,10 @@ a {
   border-radius: 5px;
   height: 5px;
   background: #e8676b;
+  transition: all .5s ease-out
+}
+.section.skills.offset .bar-line span {
+  width: 0 !important;
 }
 .row:last-child .progress-bar {
   margin-bottom: 0;
